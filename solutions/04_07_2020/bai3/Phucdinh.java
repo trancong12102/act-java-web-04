@@ -3,42 +3,48 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ktsnt;
+package bai3.pkg2;
+
 import java.util.Scanner;
+
 /**
  *
  * @author linhb
  */
-public class KTSNT {
+public class BAI32 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       int n;
+        int n, dem =0, i, j, flag;
         Scanner Ktra = new Scanner(System.in);
         System.out.println("Nhap n= ");
         n= Ktra.nextInt();
-        if(n<2){
-            System.out.println("Không phải là số nguyên tố");
-        }
-        int count=0;
-        int b= (int) Math.sqrt(n);
-        for (int i=2; i<=b; i++)
-            if(n%i==0)
-            {
-                count ++;
-               
+        System.out.println(n + " so nguyen to dau la: ");
+        for (j = 2;; j++) {
+            flag = 0;
+            for (i = 2; i < j / 2; i++) {
+                if (j % i == 0) {
+                    flag++;
+                }
             }
-        if (count ==0)
-        {
-            System.out.println("Là số nguyên tố");
-            
+            if (flag == 0) {
+                System.out.println(j + " ");
+                dem++;
+            }
+            if (dem == n) {
+                break;
+            }
         }
-        else 
-            System.out.println("Không phải là số nguyên tố" );
-        
-        }
-
+    }
 }
+
+    
+
+// TODO code application logic here
+       // Scanner input = new Scanner(System.in);
+        //System.out.println("Nhap n:");
+        //int n = input.nextInt();
+        
