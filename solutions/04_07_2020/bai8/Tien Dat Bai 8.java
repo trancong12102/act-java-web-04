@@ -18,7 +18,6 @@ public class Bai_8 {
      */
     
     public static void main(String[] args) {
-        
         Scanner input = new Scanner(System.in);
         System.out.print("Nhap gia tri x: ");
         int x = input.nextInt();
@@ -43,7 +42,6 @@ public class Bai_8 {
             }
         }
         
-        
-        System.out.println(sin);
+        System.out.printf("sin %d = %f \n",x,sin);
     }
 }
