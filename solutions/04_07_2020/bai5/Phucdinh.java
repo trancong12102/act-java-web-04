@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai5.pkg2;
+package bai5.pkg3;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author linhb
  */
-public class BAI52 {
+public class BAI53 {
 
     /**
      * @param args the command line arguments
@@ -24,7 +24,7 @@ public class BAI52 {
         System.out.println("Nhap n= ");
         n = input.nextDouble();
         for(i=1; i<=n;i++)
-            s  =  s+ i;
+            s  =  s+ (i*i);
             System.out.println("giá trị của GT  là:" + s);
     }
     
