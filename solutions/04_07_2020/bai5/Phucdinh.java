@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai5.pkg3;
+package bai5.pkg4;
 
 import java.util.Scanner;
 
@@ -11,20 +11,19 @@ import java.util.Scanner;
  *
  * @author linhb
  */
-public class BAI53 {
+public class BAI54 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
         double n, i, s = 0;
         Scanner input = new Scanner(System.in);
         System.out.println("Nhap n= ");
         n = input.nextDouble();
         for(i=1; i<=n;i++)
-            s  =  s+ (i*i);
+            s  =  s+  1/(2*i);
             System.out.println("giá trị của GT  là:" + s);
     }
     
