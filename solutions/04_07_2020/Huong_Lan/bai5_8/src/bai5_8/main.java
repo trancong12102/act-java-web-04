@@ -20,8 +20,10 @@ public class main {
         System.out.println("Nhap n:");
         int n = input.nextInt();
         float s = 1;
+	int gt=1;
         for (int i = 2; i <= n; i++) {
-            s = s + s*i;
+	    gt=gt*i;
+            s = s + gt;
         }
         System.out.println("Tong s = " + s);
     }
