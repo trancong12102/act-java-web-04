@@ -11,17 +11,16 @@ import java.util.Scanner;
  *
  * @author luuthanhcong
  */
-public class B5c {
-    public static void main(String[] args){
+public class B5d {
+
+    public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("Nhập n : ");
         int n = s.nextInt();
-        int sum = 0;
-        for (int i = 1; i <= n; i++) {
-            sum += i*i;
+        float sum = 0;
+        for (int i = 1; i < n; i++) {
+            sum += (float)1/(2*i);
         }
         System.out.println(sum);
-        
     }
-    
 }
