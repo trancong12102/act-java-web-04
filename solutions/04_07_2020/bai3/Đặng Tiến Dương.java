@@ -11,24 +11,36 @@ import java.util.Scanner;
  *
  * @author Admin
  */
-public class Bai3a {
+public class Bai3b {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Nhập vào 1 số: ");
-        int n= input.nextInt();
-        int dem=0;
-        if(n<=2){
-            System.out.println(n+" Không phải là số nguyên tố");
-        }
-        for(int i=2;i<=n;i++){
-            if(n%i==0){
+        System.out.print("Nhập n = ");
+        Scanner scanner= new Scanner(System.in);
+        int n = scanner.nextInt();
+        System.out.printf("%d số nguyên tố đầu tiên là: \n", n);
+        int dem = 0; 
+        int i = 2;   
+        while (dem < n) {
+            if (soNguyenTo(i)) {
+                System.out.print(i + " ");
                 dem++;
             }
+            i++;
         }
-        if(dem<=2){
-            System.out.println(n +" Số này là số nguyên tố");
-        }else
-            System.out.println(n+" Số này không phải là số nguyên tố");
+    }
+ 
+    public static boolean soNguyenTo(int n) {
+        // so nguyen n < 2 khong phai la so nguyen to
+        if (n < 2) {
+            return false;
         }
-    }         
+        // check so nguyen to khi n >= 2
+        int squareRoot = (int) Math.sqrt(n);
+        for (int i = 2; i <= squareRoot; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
