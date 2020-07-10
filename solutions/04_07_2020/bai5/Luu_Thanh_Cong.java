@@ -11,18 +11,20 @@ import java.util.Scanner;
  *
  * @author luuthanhcong
  */
-public class B5h {
+public class B5i {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("Nhập n : ");
         int n = s.nextInt();
-        int tich = 1;
-        int tong = 0;
+        System.out.println("Nhập x : ");
+        int x = s.nextInt();
+        int lt = 1;
+        int sum = 0;
         for (int i = 1; i <= n; i++) {
-            tich *= i;
-            tong += tich;
+            lt *= x;
+            sum += lt;
         }
-        System.out.println(tong);
+        System.out.println(sum);
     }
 }
