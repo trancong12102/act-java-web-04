@@ -11,20 +11,18 @@ import java.util.Scanner;
  *
  * @author luuthanhcong
  */
-public class B5i {
-
-    public static void main(String[] args) {
+public class B5m {
+    public static void main(String[] args){
         Scanner s = new Scanner(System.in);
         System.out.println("Nhập n : ");
         int n = s.nextInt();
-        System.out.println("Nhập x : ");
-        int x = s.nextInt();
-        int lt = 1;
-        int sum = 0;
+        int t = 1;
+        float sum = 0;
         for (int i = 1; i <= n; i++) {
-            lt *= x;
-            sum += lt;
+            t += i;
+            sum = (float)1/t;
         }
         System.out.println(sum);
+        
     }
 }
