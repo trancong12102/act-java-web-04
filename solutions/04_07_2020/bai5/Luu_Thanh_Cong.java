@@ -11,14 +11,14 @@ import java.util.Scanner;
  *
  * @author luuthanhcong
  */
-public class B5e {
+public class B5f {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         System.out.println("Nhập n : ");
         int n = s.nextInt();
         float sum = 0;
         for (int i = 1; i < n; i++) {
-            sum += (float)1/(2*i+1);
+            sum += 1/(i*(i+1));
         }
         System.out.println(sum);
     }
