@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai4.pkg2;
+package bai4;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author linhb
  */
-public class BAI42 {
+public class BAI4 {
 
     /**
      * @param args the command line arguments
@@ -24,16 +24,17 @@ public class BAI42 {
         n= input.nextInt();
         
         while(n!=0)
-        {   int min;
-            min= input.nextInt();
-            if(min==0)
+        {   int max;
+            max= input.nextInt();
+            if(max==0)
             {
                 break;
                        
-            }else if (min<n){
-                n =min;
+            }else if (max>n){
+                n =max;
             }
-        }System.out.println("số nhỏ nhất vừa nhập là:" +n);
+        }System.out.println("số lớn nhất vừa nhập là:" +n);
     }
     
 }
+    
