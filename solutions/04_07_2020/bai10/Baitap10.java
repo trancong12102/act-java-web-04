@@ -5,28 +5,28 @@
  */
 package baitap10;
 
-package javaapplication1;
-
 import java.util.Scanner;
 
-public class Bai4p2 {
-    public static void main(String[] args) {
-        System.out.println("Nhap so: ");
-        Scanner input = new Scanner(System.in);
-        int a = input.nextInt();
-        int min = a;
-        while (a!=0){
-            if (a==0){
-                break;
-            }
-            else {
-                a = input.nextInt();
-                if (min>a) {
-                    min = a;
-                }
-            }
-        }
-        System.out.println("So nho nhat la: " +min);
-    }
+/**
+ *
+ * @author Dell
+ */
+public class Baitap10 {
+
+   public static void main(String[] args) {
+        int sosau = 0;
+        System.out.println("nhap so:");
+        int n=new Scanner(System.in).nextInt();
+        int sobandau=n;
+        while(n>0){
+            int sd=n%10;
+            sosau=10*sosau+sd;
+            n/=10;
+       }
+       if(sosau==sobandau)
+            System.out.println("la so da nguoc");
+       else System.out.println("khong phai so dao nguoc");
 }
+}
+    
 
