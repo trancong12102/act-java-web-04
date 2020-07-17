@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * Lập chương trình tính cos(x) với độ chính xác 0.0001 theo công thức
+ *
  * @author Student
  */
 public class Main {
@@ -27,7 +28,7 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner input = new Scanner(System.in);
-        float do_chinh_xac = (float) 0.0001, cosx;
+        float do_chinh_xac = (float) 0.0001, cosx, sinx;
         System.out.println("Nhap x:");
         float x = input.nextFloat();
         // doi tu do sang radian
@@ -36,11 +37,13 @@ public class Main {
         cosx = 1;
         float e;// do chinh xac
         do {
-            e = (float) Math.pow(-1, i) * (float) Math.pow(x, 2 * i ) / (float) giaithua(2 * i );
+            e = (float) Math.pow(-1, i) * (float) Math.pow(x, 2 * i) / (float) giaithua(2 * i);
             cosx = cosx + e;
             i++;
         } while (do_chinh_xac <= Math.abs(e));
-        System.out.print(cosx);
+        //System.out.print(cosx);
+        sinx = (float) Math.sqrt(1 - cosx * cosx);
+        System.out.print(sinx);
     }
 
 }
