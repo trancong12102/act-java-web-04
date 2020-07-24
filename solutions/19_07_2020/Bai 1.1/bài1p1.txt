@@ -1,0 +1,46 @@
+package mangsumchanle.Mangsumchanle;
+import java.util.Scanner;
+
+/**
+ *
+ * @author tu070
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //tong all
+        int sum = 0, tempSort, s1 = 0, s2 = 0;
+        Scanner sc = new Scanner(System.in);
+        int n = Integer.parseInt(sc.nextLine());
+        System.out.println("Nhập các phần tử cho mảng: ");
+        int[] array = new int[5];
+        for (int i = 0; i < n; i++) {
+            System.out.print("ptu " + i + ": ");
+            array[i] = sc.nextInt();
+        }
+        System.out.println("\nMảng ban đầu: ");
+        for (int i = 0; i < n; i++) {
+            System.out.print(array[i] + "\t");
+        }
+        for (int i = 0; i < n; i++) {
+            sum += array[i];
+        }
+        System.out.println("\nTổng các ptu = " + sum);
+        //tong cac ptu le
+
+        for (int i = 0; i < n; i++) {
+
+            if (array[i] % 2 == 0) {
+                s1 += array[i];
+            } else if (array[i] % 2 != 0) {
+                s2 += array[i];
+            }
+
+        }
+        System.out.println("Tong chan la" + s1);
+        System.out.println("Tong le la" + s2);
+    }
+}
