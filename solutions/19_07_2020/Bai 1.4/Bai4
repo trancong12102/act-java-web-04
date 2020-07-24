@@ -1,0 +1,66 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Baitapnop240720 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] array = new int[15];
+        Random generator = new Random();
+        for (int i = 0; i < 15; i++) {
+            array[i] = generator.nextInt();
+        }
+        //Sap xep giam dan
+
+        int tmp1;
+        for (int i = 0; i < 15; i++) {
+            for (int j = i + 1; j < 15; j++) {
+                if (array[i] < array[j]) {
+                    tmp1 = array[i];
+                    array[i] = array[j];
+                    array[j] = tmp1;
+                }
+            }
+        }
+
+        System.out.println("Sap xep giam dan: ");
+        for (int i = 0; i < 15; i++) {
+            System.out.printf("\narray[%d] = %d\n", i, array[i]);
+        }
+        //Sap xep tang dan
+        int tmp2;
+        for (int i = 0; i < 15; i++) {
+            for (int j = i + 1; j < 15; j++) {
+                if (array[i] > array[j]) {
+                    tmp2 = array[j];
+                    array[i] = array[j];
+                    array[j] = tmp2;
+                }
+            }
+        }
+        System.out.println("Sap xep tang dan: ");
+        for (int i = 0; i < 15; i++) {
+            System.out.printf("\narray[%d] = %d\n", i, array[i]);
+        }
+        //Dem phan tu chan
+        int dem = 0;
+        for (int i = 0; i < 15; i++) {
+            if (array[i] % 2 == 0) {
+                System.out.printf("Phan tu chan la %d o vi tri %d\n", array[i], i);
+                dem++;
+            }
+        }
+        System.out.printf("Co %d so chan trong mang\n", dem);
+    }
+}
