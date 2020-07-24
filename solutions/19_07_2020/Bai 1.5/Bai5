@@ -1,0 +1,57 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Baitapnop240720 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] vector1 = new int[3];
+        int[] vector2 = new int[3];
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Nhap vao toa do v1: ");
+            vector1[i] = input.nextInt();
+        }
+
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Nhap vao toa do v2: ");
+            vector2[i] = input.nextInt();
+        }
+        System.out.println("Ban da nhap toa do v1: ");
+        for (int i = 0; i < 3; i++) {
+            System.out.println(vector1[i]);
+        }
+        System.out.println("Ban da nhap toa do v2: ");
+        for (int i = 0; i < 3; i++) {
+            System.out.println(vector2[i]);
+        }
+        //Cong hai vector
+        int[] kq1 = new int[3];
+        for (int i = 0; i < 3; i++) {
+            kq1[i] = vector1[i] + vector2[i];
+        }
+        System.out.println("Ket qua v1 + v2 =");
+        for (int i = 0; i < 3; i++) {
+            System.out.printf("%d\t", kq1[i]);
+        }
+        int[] kq2 = new int[3];
+        for (int i = 0; i < 3; i++) {
+            kq2[i]=vector1[i]*vector2[i];
+        }
+        System.out.println("\nKet qua tich vo huong v1,v2 = ");
+        int s=0;
+        for (int i = 0; i < 3; i++) {
+            s=s+kq2[i];
+        }
+        System.out.println(+s);
+    }
+}
