@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */ //Mảng 2 chiều
+package array2.Array2;
+import java.util.Scanner;
+
+/**
+ *
+ * @author tu070
+ */
+public class main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+        System.out.print("kthc ma tran (n x n). n = >");
+        int n = Integer.parseInt(sc.nextLine());
+        int [][] A = new int [3][3];
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3;j++){
+                System.out.printf("A[%d][%d] = ",i,j);
+                A[i][j] = Integer.parseInt(sc.nextLine());
+                }
+            }
+                System.out.println("Mtran A: ");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+            System.out.print(A[i][j] + "\t");
+                }
+            System.out.println("\n");
+            }
+
+        int[] sCol = new int[3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                sCol[j] += A[i][j]; 
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+                System.out.printf("Tong cac cot %d : %d \n",i+1,sCol[i]);
+        }
+        System.out.print("\n");
+
+        int[] sRow = new int[3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                sRow[j] += A[j][i]; 
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+                System.out.printf("Tong cac hang %d : %d \n",i+1,sRow[i]);
+    }
+    }    
+}
