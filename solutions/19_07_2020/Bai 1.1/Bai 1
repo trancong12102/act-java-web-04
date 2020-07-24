@@ -1,0 +1,42 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Baitapnop240720 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] A = new int[5];
+        for (int i = 0; i < 5; i++) {
+            System.out.printf("A[%d]= ", i);
+            A[i] = input.nextInt();
+        }
+        //Tong cac phan tu trong mang
+        int s = 0;
+        for (int i = 0; i < 5; i++) {
+            s = s + A[i];
+        }
+        System.out.println("Tong cua mang la: S= " + s);
+        //Tong cac phan tu le trong mang
+        int s1 = 0;
+        s = 0;
+        for (int i = 0; i < 5; i++) {
+            if (A[i] % 2 != 0) {
+                s1 = s1 + A[i];
+            } else {
+                s = s + A[i];
+            }
+        }
+        System.out.println("Tong cua phan tu le la: " + s1);
+        System.out.println("Tong cua cac phan tu chan la: " + s);
+    }
+}
