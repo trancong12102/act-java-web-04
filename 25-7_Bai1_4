@@ -1,0 +1,58 @@
+package buoi7_javacore_baitap;
+
+import java.util.Scanner;
+import java.util.Random;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Buoi7_BT4 {
+    public static void main(String[] args){
+    Scanner rd = new Scanner(System.in);
+        int[] Arr1 = new int[15];
+        for (int i = 0; i < Arr1.length; i++) {
+            Arr1[i] = rd.nextInt();   
+        }
+        //Sap sep tang dan
+        int temp;
+        for (int i = 0; i < Arr1.length  -1; i++) {
+            for (int j = 0; j < Arr1.length; j++) {
+                if (Arr1[i] > Arr1[j]) {
+                    temp=Arr1[i];
+                    Arr1[i]=Arr1[j];
+                    Arr1[j]=temp;
+                }
+            }
+        }
+        System.out.println("Mang sap xep tang dan: ");
+        for (int Arr : Arr1)
+            System.out.printf(" %d ", Arr);
+        System.out.println(" ");
+        // Sap xep giam dan
+        int temp1;
+        for (int i = 0; i < Arr1.length  -1; i++) {
+            for (int j = 0; j < Arr1.length; j++) {
+                if (Arr1[i] < Arr1[j]) {
+                    temp=Arr1[i];
+                    Arr1[i]=Arr1[j];
+                    Arr1[j]=temp;
+                }
+            }
+        }
+        System.out.println("Mang sap xep giam dan: ");
+        for (int Arr : Arr1)
+            System.out.printf(" %d ", Arr);
+        System.out.println(" ");
+        // Dem so chan
+        int sochan =0;
+        for(int Arr : Arr1){
+            if(Arr %2 ==0){
+                sochan +=1;
+            }
+        }
+        System.out.printf("So so chan la %d", sochan);
+        System.out.printf("So so le la %d", (Arr1.length - sochan));
+        
+    }
+}
