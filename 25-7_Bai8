@@ -1,0 +1,89 @@
+package buoi7_javacore_baitap;
+import java.util.Scanner;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Buoi7_BT8 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        //Nhap ma tran
+        int[][] matranA = new int[3][3];
+        for(int i = 0 ; i < 3; i++)
+        {
+            for(int j=0;j < 3;j++)
+            {
+                System.out.printf("Nhap phan tu hang %d cot %d cua ma tran A : \n",i+1,j+1);
+                matranA[i][j] = sc.nextInt();
+            }
+        }
+        //Kiem tra ma tran don vi
+        boolean flag=true;
+        for(int i=0; i<3 ;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                if((i!=j && matranA[i][j]!=0) || (i == j && matranA[i][j] != 1))
+                {
+                    flag=false;
+                    System.out.println("Ma tran A khong phai ma tran don vi");
+                    break;
+                }
+                if(!flag)
+                    break;
+            }
+        }
+        //Kiem tra ma tran 0
+        if(flag)
+            System.out.println("Ma tran A la ma tran don vi.");
+        flag=true;
+        for(int i=0; i<3 ;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                if(matranA[i][j]!=0)
+                {
+                    flag=false;
+                    System.out.println("Ma tran A khong phai ma tran 0");
+                    break;
+                }
+                if(!flag)
+                    break;
+            }
+        }
+        if(flag)
+            System.out.println("Ma tran A la ma tran 0.");
+        flag=true;
+        //Kiem tra ma tran doi xung
+        int[][] matranB = new int[3][3];
+        for(int i=0; i<3 ;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                matranB[i][j]=matranA[j][i];
+            }
+            
+        }
+        for(int i=0; i<3 ;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                if(matranA[i][j]!=matranB[i][j])
+                {
+                    flag = false;
+                    System.out.println("Ma tran A khong phai ma tran doi xung.");
+                    break;
+                }
+                if(!flag)
+                    break;
+            }
+        }
+        if(flag)
+            System.out.println("Ma tran A la ma tran doi xung");
+
+        
+        
+    }
+    
+}
