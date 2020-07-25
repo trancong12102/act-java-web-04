@@ -1,0 +1,83 @@
+package buoi7_javacore_baitap;
+
+import java.util.Random;
+import java.util.Scanner;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Buoi7_JavaCore_BaiTap {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        //Bai 1: 
+        //Nhap mang
+        Scanner sc = new Scanner(System.in);
+        int[] Arr1 = new int[5];
+        for (int i = 0; i < Arr1.length ; i++) {
+            System.out.printf("\n Nhap vao phan tu thu %d: " ,i);
+            Arr1[i] = sc.nextInt();
+        }
+        //In mang
+        System.out.println("Mang vua nhap la:\n");
+         for (int i = 0; i < Arr1.length ; i++){
+             System.out.printf(" %d ", Arr1[i]);
+         }
+         //Tong phan tu trong mang
+         int T1 = 0;
+         for (int i = 0; i < Arr1.length ; i++){
+             T1  += Arr1[i];
+         }
+         System.out.printf("\nTong cua mang la:%d ", T1);
+         //Tong phan tu chan
+         int T2 = 0;
+         for (int i =0; i< Arr1.length; i++){
+             if(Arr1[i]%2==0){
+                 T2 += Arr1[i];
+             }
+         }
+         System.out.printf("\nTong cac so chan la:%d ", T2);
+         System.out.printf("\nTong cac so le la:%d ", (T1-T2));
+         //Bai 2: 
+         //Tim max trong mang
+         int max = Arr1[0];
+         for (int i = 0; i < Arr1.length; i++) {
+             if (max < Arr1[i]) {
+                 max = Arr1[i];
+             }
+        }
+         System.out.printf("\nGia tri lon nhat trong mang la: %d", max);
+         //Tim min trong mang
+         int min = Arr1[0];
+         for (int i = 0; i < Arr1.length; i++) {
+             if (min > Arr1[i]) {
+                 min = Arr1[i];
+             }
+        }
+         System.out.printf("\nGia tri nho nhat trong mang la: %d", min);
+         //Cac phan tu chia het cho 3
+         System.out.println("Cac so chia het cho 3 la: ");
+         for (int i = 0; i < Arr1.length; i++){
+             if (Arr1[i] %3 ==0){
+                 System.out.printf("%d", Arr1[i]);
+             }
+         }
+         //Bai 3: 
+         System.out.println("Nhap vao so a can tim: ");
+         int a = sc.nextInt();
+         boolean flag = true;
+         for (int i = 0; i < Arr1.length; i++){
+             if (Arr1[i] == a){
+                 flag = false;
+                 System.out.printf("\n Co %d xuat hien tai vi tri %d:\n",a,i);
+             }        
+         }
+         if(flag){
+             System.out.printf("%d khong co trong mang !\n",a);
+         }
+    }
+}
