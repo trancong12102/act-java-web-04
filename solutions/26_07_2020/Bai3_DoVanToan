@@ -1,0 +1,56 @@
+package com.java.demo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Aptech {
+
+    private int LaHv;
+    private float Diem;
+    private int NoiQuy;
+    private int ThiLai;
+
+    public Aptech() {
+    }
+
+    public Aptech(int LaHv, float Diem, int NoiQuy, int ThiLai) {
+        this.LaHv = LaHv;
+        this.Diem = Diem;
+        this.NoiQuy = NoiQuy;
+        this.ThiLai = ThiLai;
+    }
+
+    void inputInfo() {
+        System.out.println("Nhap thong tin LaHv(1 or 0), Diem > 75(1 or 0),Noiquy vi pham( 1 or 0),ThiLai(1 or 0)");
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Ban la hoc vien HDSE ?");
+            System.out.println("1 or 0 :");
+            this.LaHv = sc.nextInt();
+        } while (this.LaHv != 0 || this.LaHv != 1);
+        do {
+            System.out.println("Ban co duoc >= 75 diem khong? ");
+            this.Diem = sc.nextFloat();
+        } while (this.Diem < 75);
+        do {
+            System.err.println("Ban co vi pham noi quy khong?");
+            this.NoiQuy = sc.nextInt();
+        } while (this.NoiQuy != 0 && this.NoiQuy != 1);
+        do {
+            System.out.println("Ban phai thi lai khong?");
+            this.ThiLai = sc.nextInt();
+        } while (this.ThiLai != 0 && this.ThiLai != 1);
+    }
+
+    void HocBong() {
+        if (this.Diem >= 75 && this.LaHv == 1 && this.NoiQuy == 0 && this.ThiLai == 0) {
+            System.out.println("Ban nhan duoc hoc bong!");
+        } else {
+            System.out.println("Ban khong duoc hoc bong");
+        }
+    }
+
+}
