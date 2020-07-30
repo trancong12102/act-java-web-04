@@ -1,0 +1,86 @@
+package com.java.demo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Student {
+
+    private String Code;
+    private float Mark;
+    private int Age;
+    private String Class;
+
+    public Student(String Code, float Mark, int Age, String Class) {
+        this.Code = Code;
+        this.Mark = Mark;
+        this.Age = Age;
+        this.Class = Class;
+    }
+
+    Student() {
+        
+    }
+
+    public String Code() {
+        this.Code = Code;
+        return Code;
+    }
+
+    public String Class() {
+        this.Class = Class;
+        return Class;
+    }
+
+    public float Mark() {
+        this.Mark = Mark;
+        return Mark;
+    }
+
+    public int Age() {
+        this.Age = Age;
+        return Age;
+    }
+
+    void inputInfo() {
+        System.out.println("Hay nhap Code, Mark, Age, Class :");
+        System.out.println("Neu nhap sai ban phai nhap lai!!!");
+        Scanner sc = new Scanner(System.in);
+        do {
+            System.out.println("Hay nhap Code co 8 so !");
+            this.Code = sc.nextLine();
+        } while (this.Code.length() != 8);
+        do {
+            System.out.println("Hay nhap diem lon hon 0 va nho hon 10 !");
+            this.Mark = sc.nextFloat();
+        } while (this.Mark >= 10.0 || this.Mark <= 0.0);
+        do {
+            System.out.println("Hay nhap tuoi lon hon 18");
+            this.Age = sc.nextInt();
+        } while (Age < 18);
+        do {
+            System.out.println("Nhap ten lop bat dau bang chu cai A hoac C !");
+            this.Class = sc.nextLine();
+        } while (this.Class.charAt(0) != 'A' || this.Class.charAt(0) != 'C');
+        System.out.println("\n");
+    }
+
+    void showInfo() {
+        System.out.println("Thong tin sinh vien: ");
+        System.out.println("Ma sinh vien: " + this.Code);
+        System.out.println("Diem: " + this.Mark);
+        System.out.println("Tuoi: " + this.Age);
+        System.out.println("Lop: " + this.Class);
+        this.schoolarship();
+    }
+
+    void schoolarship() {
+        if (this.Mark > 8.0) {
+            System.out.println("Nhan duoc hoc bong !");
+        } else {
+            System.out.println("Khong nhan duoc hoc bong !");
+        }
+    }
+}
