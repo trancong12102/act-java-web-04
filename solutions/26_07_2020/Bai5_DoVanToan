@@ -1,0 +1,51 @@
+package com.java.demo;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Triangle {
+
+    private float a, b, c;
+
+    void inputInfo() {
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            System.out.println("Nhap a, b,c tao thanh tam giac !");
+            System.out.print(" a= ");
+            this.a = sc.nextFloat();
+            System.out.print(" b= ");
+            this.b = sc.nextFloat();
+            System.out.print(" c= ");
+            this.c = sc.nextFloat();
+        } while (this.a + this.c <= this.b || this.a + this.b <= this.c || this.b + this.c <= this.a);
+    }
+
+    void KT() {
+        if (this.a == this.c || this.a == this.b || this.b == this.c) {
+            if (this.a == this.b && this.b == this.c) {
+                System.out.println("La Tam giac deu");
+            } else if (this.a * this.a + this.b * this.b == this.c * this.c || this.a * this.a + this.c * this.c == this.b * this.b || this.b * this.b + this.c * this.c == this.a * this.a) {
+                System.out.println("La Tam giac vuong can");
+            } else {
+                System.out.println("La tam giac can");
+            }
+        } else if (this.a * this.a + this.b * this.b == this.c * this.c || this.a * this.a + this.c * this.c == this.b * this.b || this.b * this.b + this.c * this.c == this.a * this.a) {
+            System.out.println("La tam giac vuong");
+        } else {
+            System.out.println("La tam giac thuong");
+        }
+    }
+
+    void Chuvi() {
+        System.out.println("Chu vi tam giac : " + (this.a + this.b + this.c));
+    }
+
+    void DienTich() {
+        float d = (this.a + this.b + this.c) / 2;// d la nua chu vi
+        System.out.println("Dien tich tam giac: " + Math.sqrt(d * (d - this.a) * (d - this.b) * (d - this.c)));
+    }
+}
