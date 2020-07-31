@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Retangle {
+
+    private int a, b;
+
+    public Retangle() {
+    }
+
+    public Retangle(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public int getA() {
+        return a;
+    }
+
+    public void setA(int a) {
+        this.a = a;
+    }
+
+    public int getB() {
+        return b;
+    }
+
+    public void setB(int b) {
+        this.b = b;
+    }
+
+    void nhapinfo() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nhap vao do dai hai canh: ");
+        a = input.nextInt();
+        b = input.nextInt();
+    }
+
+    void tinhtoan() {
+        System.out.println("dien tich la: " + (a * b));
+        System.out.println("chu vi la: " + (a + b) * 2);
+    }
+}

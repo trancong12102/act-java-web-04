@@ -1,0 +1,93 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Student {
+
+    private String maSV;
+    private int age;
+    private float diemTB;
+    private String lop;
+
+    public Student() {
+    }
+
+    public Student(String name, int age, float height) {
+        this.maSV = maSV;
+        this.age = age;
+        this.diemTB = diemTB;
+        this.lop = lop;
+    }
+
+    public void setMaSV(String maSV) {
+        this.maSV = maSV;
+    }
+
+    public String getMaSV() {
+        return maSV;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setDiemTB(float diemTB) {
+        this.diemTB = diemTB;
+    }
+
+    public float getDiemTB() {
+        return diemTB;
+    }
+
+    public void setLop(String lop) {
+        this.lop = lop;
+    }
+
+    public String getLop() {
+        return lop;
+    }
+
+    void inputInfo() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nhap vao ma SV> ");
+        this.maSV = input.nextLine();
+        System.out.println("Nhap vao tuoi> ");
+        this.age = Integer.parseInt(input.nextLine());
+        do {
+            System.out.println("Nhap vao lop> ");
+            this.lop = input.nextLine();
+        } while (this.lop.indexOf("A") != 0);
+        do {
+            System.out.println("Nhap vao diem TB> ");
+            this.diemTB = input.nextFloat();
+        } while (this.diemTB < 0.0 || this.diemTB > 10.0);
+    }
+
+    void showInfo() {
+        System.out.println("Ma SV: " + this.maSV);
+        System.out.println("Tuoi " + this.age);
+        System.out.println("Lop:: " + this.lop);
+        System.out.println("Diem TB: " + this.diemTB);
+    }
+
+    void xetHB() {
+        if (this.diemTB >= 8.0) {
+            System.out.printf("Ban dat hoc bong voi so diem %f", this.diemTB);
+        } else {
+            System.out.printf("Ban khong dat hoc bong vi thieu %f diem", 8.0 - this.diemTB);
+        }
+    }
+}
