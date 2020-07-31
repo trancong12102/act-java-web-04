@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bai3;
+package baitapclass;
+
 
 import java.util.Scanner;
 
@@ -12,33 +13,46 @@ import java.util.Scanner;
  * @author Dell
  */
 public class Nhap {
-    Thongtin t = new Thongtin();
 
-    public void input() {
-        System.out.print("1.la` hoc vien cua khoa HDSE(y/n):>");
-        t.setHocvien(new Scanner(System.in).nextLine());
-        System.out.print("2.so diem tong ket:>");
-        t.setDiem(new Scanner(System.in).nextInt());
-        System.out.print("3.so lan vi pham noi quy:>");
-        t.setVipham(new Scanner(System.in).nextInt());
-        System.out.print("4.so lan thi lai:>");
-        t.setSolanthi(new Scanner(System.in).nextInt());
+    Student s=new Student();
+    public void inputInfo() {
+        System.out.print("nhap ten:  >>");
+        s.setTen(new Scanner(System.in).nextLine());
+        System.out.print("nhap tuoi  >>");
+        s.setTuoi(new Scanner(System.in).nextInt());
+        while(s.getTuoi()<18){
+            System.out.print("nhap lai tuoi :   >>");
+            s.setTuoi(new Scanner(System.in).nextInt());
+        }
+        
+        System.out.print("nhap LOP(ki tu bat dau A or C):   >>");
+        s.setLop(new Scanner(System.in).nextLine());
+        System.out.print("nhap diem (0.0--10.0) :   >>");
+        s.setDiemtb(new Scanner(System.in).nextDouble());
+        while((s.getDiemtb()<0||s.getDiemtb()>10)){
+            System.out.print("nhap diem (0.0--10.0) :   >>");
+            s.setDiemtb(new Scanner(System.in).nextDouble());
+        }
+        System.out.print("nhap ma sinh vien (length==8):   >>");
+        s.setMasv( new Scanner(System.in).nextLine());
+        while(s.getMasv().length()!=8){
+            System.out.print("nhap ma :   >>");
+            s.setDiemtb(new Scanner(System.in).nextDouble());
+        }
+        }
+    
+    public void printInfo(){
+        System.out.println("ten:"+s.getTen());
+        System.out.println("tuoi:"+s.getTuoi());
+        System.out.println("ma sinh vien:"+s.getMasv());
+        System.out.println("Lop:"+s.getLop());
+        System.out.println("diem:"+s.getDiemtb());
     }
-
-    public void getHocbong() {
-        boolean temp = false;
-        System.out.println("la hoc vien :" + t.getHocvien());
-        System.out.println("so diem tong ket:" + t.getDiem());
-        System.out.println("so lan vi pham:" + t.getVipham());
-        System.out.println("so lan thi lai:" + t.getSolanthi());
-        if (t.getHocvien().compareTo("y") == 0 && t.getDiem() >= 75 && t.getVipham() == 0 && t.getSolanthi() == 0) {
-            temp = true;
-        }
-        if (temp == true) {
+    public void hocbong(){
+        
+        if(s.getDiemtb()>8)
             System.out.println("đã dành đc học bổng");
-        }
-        if (temp == false) {
-            System.out.println("khong dành đc học bổng");
-        }
+        else System.out.println("không dành đc học bổng");
+        
     }
 }
