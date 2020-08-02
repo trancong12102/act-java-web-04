@@ -1,109 +1,89 @@
+package bai5;
 
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
  *
- * @author Administrator
+ * @author Trieu
  */
 public class Triangle {
 
-    private double a, b, c;
-    int d;
+    float a;
+    float b;
+    float c;
 
+//Contructor khong co tham so
     public Triangle() {
+
     }
 
-    public Triangle(double a, double b, double c) {
+    //Contructor co tham so
+    public Triangle(float a, float b, float c) {
         this.a = a;
         this.b = b;
         this.c = c;
-    }
 
-    public Triangle(int d) {
-        this.d = d;
     }
+//Ham set get
 
-    public double getA() {
+    public float getA() {
         return a;
     }
 
-    public double getB() {
-        return b;
-    }
-
-    public double getC() {
-        return c;
-    }
-
-    public void setA(double a) {
+    public void setA(float a) {
         this.a = a;
     }
 
-    public void setB(double b) {
+    public float getB() {
+        return b;
+    }
+
+    public void setB(float b) {
         this.b = b;
     }
 
-    public void setC(double c) {
+    public float getC() {
+        return c;
+    }
+
+    public void setC(float c) {
         this.c = c;
     }
 
-    public void INPUTCanh() {
+    //Cac phuong thuc
+    void input() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("->nhap 3 canh cua tam giac<-");
-        System.out.print("a=>>");
-        a = sc.nextDouble();
-        System.out.print("b=>>");
-        b = sc.nextDouble();
-        System.out.print("c=>>");
-        c = sc.nextDouble();
-
+        System.out.println("Nhap do dai canh a =");
+        a = sc.nextFloat();
+        System.out.println("Nhap do dai canh b =");
+        b = sc.nextFloat();
+        System.out.println("Nhap do dai canh  c=");
+        c = sc.nextFloat();
     }
 
-    public void CHUVI() {
-        if (d != 0) {
-            System.out.println("chu vi tam giac la " + (this.a + this.b + this.c));
+    void kiemTra() {
+        if (a == b && b == c) {
+            System.out.println("Tam giác đều");
+            return;
         }
-
-    }
-
-    public void DIENTICH() {
-        double S, P;
-        if (d != 0) {
-            P = (a + b + c);
-            S = Math.sqrt(P * (P - a) * (P - b) * (P - c));
-            System.out.println("Dien tich tam giac la " + S);
-        }
-
-    }
-
-    public void xacdinhtamgiac() {
-        if (a + b > c && b + c > a && a + c > b)
-        {
-            d = 1;
-            if (a == b && b == c && a == c) {
-                System.out.println("---> Tam giac deu <---");
-                d++;
-            } else if (a == b || b == c || c == a) {
-                System.out.println("---> Tam giac can <---");
-                d++;
+        if (a == b || b == c || c == a) {
+            if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
+                System.out.println("Tam giác vuông cân");
+            } else {
+                System.out.println("Tam giác cân");
             }
-            if (a * a == (b * b + c * c) || b * b == (a * a + c * c) || c * c == (a * a + b * b)) {
-                System.out.println("---> Tam giac vuong <---");
-                d++;
-            }
-        } else {
-            d = 0;
-            System.out.println("---> Khong la tam giac <---");
+            return;
         }
-        if (d == 1) {
-            System.out.println("> TAm giac thuong <");
+        if (a * a + b * b == c * c || a * a + c * c == b * b || b * b + c * c == a * a) {
+            System.out.println("Tam giac vuông");
+            return;
         }
-
+        System.out.println("Tam giác thường");
     }
-
+    
+    void tinhChuViDienTich(){
+        float P=(this.a+this.b+this.c)/2;
+        System.out.println("Chu vi tam giac"+(this.a+this.b+this.c));
+        System.out.println("DIen tich tam giac"+Math.sqrt(P*(P-a)*(P-b)*(P-c)));
+    }
 }
