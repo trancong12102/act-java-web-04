@@ -11,93 +11,110 @@ import java.util.Scanner;
  *
  * @author luuthanhcong
  */
-public class Student {
-    String maSinhVien;
-    double diemTB;
-    int tuoi;
-    String lop;
+public class B3 {
+     private Boolean Khoahoc;
+    private double diemTK;
+    private Boolean vipham;
+    private Boolean lanthi;
 
-    public Student() {
+    public B3() {
     }
 
-    public Student(String maSinhVien, double diemTB, int tuoi, String lop) {
-        this.maSinhVien = maSinhVien;
-        this.diemTB = diemTB;
-        this.tuoi = tuoi;
-        this.lop = lop;
+    public B3(Boolean Khoahoc, double diemTK, Boolean vipham, Boolean lanthi) {
+        this.Khoahoc = Khoahoc;
+        this.diemTK = diemTK;
+        this.vipham = vipham;
+        this.lanthi = lanthi;
     }
 
-    public String getMaSinhVien() {
-        return maSinhVien;
+    public Boolean getKhoahoc() {
+        return Khoahoc;
     }
 
-    public double getDiemTB() {
-        return diemTB;
+    public void setKhoahoc(Boolean Khoahoc) {
+        this.Khoahoc = Khoahoc;
     }
 
-    public int getTuoi() {
-        return tuoi;
+    public double getDiemTK() {
+        return diemTK;
     }
 
-    public String getLop() {
-        return lop;
+    public void setDiemTK(double diemTK) {
+        this.diemTK = diemTK;
     }
 
-    public void setMaSinhVien(String maSinhVien) {
-        if(maSinhVien.length() == 8){
-            this.maSinhVien = maSinhVien;
-        }else{
-            System.out.println("Nhap lai : ");
+    public Boolean getVipham() {
+        return vipham;
+    }
+
+    public void setVipham(Boolean vipham) {
+        this.vipham = vipham;
+    }
+
+    public boolean getLanthi() {
+        return lanthi;
+    }
+
+    public void setLanthi(Boolean lanthi) {
+        this.lanthi = lanthi;
+    }
+
+    void nhapInfo() {
+        Scanner input = new Scanner(System.in);
+        int tl;
+        System.out.println("Ban co tham gia khoa hoc> (0/1)");
+        tl = input.nextInt();
+        if (tl == 1) {
+            this.Khoahoc = true;
+        } else {
+            this.Khoahoc = false;
+        }
+        System.out.println("Nhap vao diem tong ket> ");
+        this.diemTK = input.nextDouble();
+        System.out.println("So lan vi pham> (0/n)");
+        tl = input.nextInt();
+        if (tl == 0) {
+            this.vipham = true;
+        } else {
+            this.vipham = false;
+        }
+        System.out.println("So lan thi lai (0/n)");
+        tl = input.nextInt();
+        if (tl == 0) {
+            this.lanthi = true;
+        } else {
+            this.lanthi = false;
         }
     }
 
-    public void setDiemTB(double diemTB) {
-        if(diemTB > 0 && diemTB < 10){
-            this.diemTB = diemTB;
-        }else{
-            System.out.println("Nhap lai : ");
+    void inkq() {
+        if (this.Khoahoc == true) {
+            System.out.println("Ban da tham gia khoa hoc");
+        } else {
+            System.out.println("Ban khong tham gia khoa hoc");
         }
-    }
-
-    public void setTuoi(int tuoi) {
-        if(tuoi > 18){
-            this.tuoi = tuoi;
+        
+        if(this.lanthi == true) {
+            System.out.println("Ban khong thi lai");
         }else{
-            System.out.println("Nhap lai : ");
+            System.out.println("Ban co thi lai");
         }
-    }
-
-    public void setLop(String lop) {
-        this.lop = lop;
-    }
-    
-    public void inputInfo(){
-        Scanner s = new Scanner(System.in);
-        System.out.println("nhap ma so : ");
-        maSinhVien = s.nextLine();
-        System.out.println("Nhap diem tb : ");
-        diemTB = s.nextDouble();
-        System.out.println("Nhap tuoi : ");
-        tuoi = Integer.parseInt(s.nextLine());
-        System.out.println("Nhap lop : ");
-        lop = s.nextLine();
-                
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" + "maSinhVien=" + maSinhVien + ", diemTB=" + diemTB + ", tuoi=" + tuoi + ", lop=" + lop + '}';
-    }
-    
-    public void showInfo(){
-        System.out.println(toString());
-    }
-    
-    public void hocBong(){
-        if(diemTB > 8){
-            System.out.println("duoc hoc bong");
+        
+        if(this.vipham == true){
+            System.out.println("Ban khong co vi pham");
         }else{
-            System.out.println("khong duoc hoc bong");
+            System.out.println("Ban tung vi pham");
+        }
+        
+        System.out.println("============Ket qua ne!!!===========");
+        if (this.Khoahoc == false) {
+            System.out.println("Ban khong nhan dc hoc bong");
+        } else if (this.lanthi == false) {
+            System.out.println("Ban khong nhan dc hoc bong");
+        } else if (this.vipham == false) {
+            System.out.println("Ban khong nhan dc hoc bong");
+        } else {
+            System.out.println("Ban dat hoc bong");
         }
     }
 }
