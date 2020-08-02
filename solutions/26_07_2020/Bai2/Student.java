@@ -1,96 +1,121 @@
-
-package Object.Bai2;
-
+package bai2;
 import java.util.Scanner;
-
+/**
+ *
+ * @author Trieu
+ */
 public class Student {
+    private String tenSV;
     private String MSV;
     private float DTB;
-    private int Age;
-    private String Class;
-    
-    public Student(){}
-    
-    public Student(String MSV, float DTB, int Age, String Class){
+    private int tuoi;
+    private String lop;
+    private String hocBong;
+    //Contructor khong tham so
+    public Student() {
+
+    }
+    //Contructor co tham so
+
+    public Student(String tenSV,String MSV, float DTB, int tuoi, String lop) {
+        this.tenSV=tenSV;
         this.MSV = MSV;
         this.DTB = DTB;
-        this.Age = Age;
-        this.Class = Class;
+        this.tuoi = tuoi;
+        this.lop = lop;
+        this.hocBong= hocBong;
     }
-    String getMSV(){
+    
+    //ham set get
+    public String getTenSV() {
+        return tenSV;
+    }
+
+    public void setTenSV(String tenSV) {
+        this.tenSV = tenSV;
+    }
+    public String getMSV() {
         return MSV;
     }
-    void setMSV(String MSV){
+
+    public void setMSV(String MSV) {
         this.MSV = MSV;
     }
-    float getDTB(){
+
+    public float getDTB() {
         return DTB;
     }
-    void setDTB(float DTB){
+
+    public void setDTB(float DTB) {
         this.DTB = DTB;
     }
-    int getAge(){
-        return Age;
+
+    public int getTuoi() {
+        return tuoi;
     }
-    void setAge(int Age){
-        this.Age = Age;
+
+    public void setTuoi(int tuoi) {
+        this.tuoi = tuoi;
     }
-    String getclass(){
-        return Class;
+
+    public String getLop() {
+        return lop;
     }
-    void setclass (String Class){
-        this.Class = Class;
+
+    public void setLop(String lop) {
+        this.lop = lop;
     }
-    void inputInfo(){
+     public String getHocBong() {
+        return hocBong;
+    }
+
+    public void setHocBong(String hocBong) {
+        this.hocBong = hocBong;
+    }
+     //ham nhap
+    void inputInfor(){
         Scanner input = new Scanner(System.in);
-        for (int i = 0;i<=1;i++){
-            System.out.print("Nhập mã sinh viên: ");
+        System.out.println("Nhập tên sinh viên: ");
+        tenSV = input.nextLine();
+        do {
+            System.out.println("Nhập mã sinh viên :");
             MSV = input.nextLine();
-            if (MSV.length() != 8){
-                System.out.println("Mã sinh viên nhập sai, yêu cầu nhập lại!");
-                i = 0;
-            }
-        }    
-        for (int i = 0;i<=1;i++){
-            System.out.print("Nhập điểm trung bình của sinh viên: ");
-            DTB = input.nextFloat();
-            if (DTB < 0 || DTB > 10){
-                System.out.println("Điểm trung bình nhập sai, yêu cầu nhập lại!");
-                i = 0;
-            }
-        }
-        for (int i = 0;i<=1;i++){
-            System.out.print("Nhập tuổi của sinh viên: ");
-            Age = input.nextInt();
-            input.nextLine();
-            if (Age < 18){
-                System.out.println("Tuổi sinh viên nhập sai, yêu cầu nhập lại!");
-                i = 0;
-            }
-        }
-        for (int i = 0;i<=1;i++){
-            System.out.print("Nhập lớp của sinh viên: ");
-            Class = input.nextLine();
-            if (Class.charAt(0)!='A'&& Class.charAt(0)!='C'){
-                System.out.println("Lớp của sinh viên nhập sai, yêu cầu nhập lại!");
-                i = 0;
-            }
-        }
+        } while (MSV.length() != 8);
+        do {
+            System.out.println("Điểm trung bình :");
+            DTB = Float.parseFloat(input.nextLine());
+        } while (DTB < 0 && DTB > 10);
+        do {
+            System.out.println("Tuổi:");
+            tuoi = Integer.parseInt(input.nextLine());
+        } while (tuoi < 18);
+        do {
+            System.out.println("Lớp:");
+            lop = input.nextLine();
+        } while (lop.charAt(0)!='A'&&lop.charAt(0)!='C');
+   
     }
-    void showInfo(){
-        System.out.println("Thông tin sinh viên: ");
-        System.out.println(" - Mã sinh viên: "+MSV);
-        System.out.println(" - Điểm trung bình: "+DTB);
-        System.out.println(" - Tuổi sinh viên: "+Age);
-        System.out.println(" - Sinh viên lớp: "+Class);
-        System.out.println(Scholarship());
-    }
-    String Scholarship(){
-        String Scholar;
-        if(DTB>8)
-            Scholar = " - Sinh viên được nhận học bổng";
+    
+    //ham kiem tra
+     String kiemtra()
+    {
+        if(DTB>8.0)
+        {
+            return hocBong = "Co duoc hoc bong";
+        }
         else
-            Scholar = " - Sinh viên không được nhận học bổng";
-        return Scholar;
+        {
+            return hocBong="Không duoc hoc bong";
+        }
+    }
+     
+     //ham xuat
+     void ouputShow() {
+        System.out.println("Tên học sinh :" + tenSV);
+        System.out.println("Mã SV :" + MSV);
+        System.out.println("Điểm trung bình :" + DTB);
+        System.out.println("Tuổi :" + tuoi);
+        System.out.println("Lớp :" + lop);
+        System.out.println("Học bổng:"+kiemtra());
     }
 }
