@@ -11,110 +11,61 @@ import java.util.Scanner;
  *
  * @author luuthanhcong
  */
-public class B3 {
-     private Boolean Khoahoc;
-    private double diemTK;
-    private Boolean vipham;
-    private Boolean lanthi;
+public class B4 {
+    private int a;
 
-    public B3() {
+    Scanner input = new Scanner(System.in);
+
+    public B4(int a) {
+        this.a = a;
     }
 
-    public B3(Boolean Khoahoc, double diemTK, Boolean vipham, Boolean lanthi) {
-        this.Khoahoc = Khoahoc;
-        this.diemTK = diemTK;
-        this.vipham = vipham;
-        this.lanthi = lanthi;
+    B4() {
     }
 
-    public Boolean getKhoahoc() {
-        return Khoahoc;
-    }
-
-    public void setKhoahoc(Boolean Khoahoc) {
-        this.Khoahoc = Khoahoc;
-    }
-
-    public double getDiemTK() {
-        return diemTK;
-    }
-
-    public void setDiemTK(double diemTK) {
-        this.diemTK = diemTK;
-    }
-
-    public Boolean getVipham() {
-        return vipham;
-    }
-
-    public void setVipham(Boolean vipham) {
-        this.vipham = vipham;
-    }
-
-    public boolean getLanthi() {
-        return lanthi;
-    }
-
-    public void setLanthi(Boolean lanthi) {
-        this.lanthi = lanthi;
-    }
-
-    void nhapInfo() {
-        Scanner input = new Scanner(System.in);
-        int tl;
-        System.out.println("Ban co tham gia khoa hoc> (0/1)");
-        tl = input.nextInt();
-        if (tl == 1) {
-            this.Khoahoc = true;
+    public int SoNguyenTo(int x) {
+        if (this.isSoNguyenTo(x)) {
+            this.a = x;
         } else {
-            this.Khoahoc = false;
+            System.out.printf("%d khong phai la so nguyen to, khong luu tru !\n", x);
         }
-        System.out.println("Nhap vao diem tong ket> ");
-        this.diemTK = input.nextDouble();
-        System.out.println("So lan vi pham> (0/n)");
-        tl = input.nextInt();
-        if (tl == 0) {
-            this.vipham = true;
-        } else {
-            this.vipham = false;
-        }
-        System.out.println("So lan thi lai (0/n)");
-        tl = input.nextInt();
-        if (tl == 0) {
-            this.lanthi = true;
-        } else {
-            this.lanthi = false;
-        }
+        return x;
     }
 
-    void inkq() {
-        if (this.Khoahoc == true) {
-            System.out.println("Ban da tham gia khoa hoc");
+    boolean isSoNguyenTo(int x) {
+        if (x < 2) {
+            return false;
+        }
+        int squareRoot = (int) Math.sqrt(x);
+        for (int i = 2; i <= squareRoot; i++) {
+            if (x % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    int timSoNguyenToTiepTheo() {
+        if (this.isSoNguyenTo(a)) {
+            for (int i = (a + 1); i < Integer.MAX_VALUE; i++) {
+                if (this.isSoNguyenTo(i)) {
+                    System.out.printf("so nguyen to lien ke sau a la %d\n", i);
+                    break;
+                }
+            }
+        }
+        return a;
+    }
+
+    public int getSoNguyenTo() {
+        return this.a = a;
+    }
+
+    public void setSoNguyenTo(int a) {
+        if (isSoNguyenTo(a)) {
+            this.a = a;
         } else {
-            System.out.println("Ban khong tham gia khoa hoc");
-        }
-        
-        if(this.lanthi == true) {
-            System.out.println("Ban khong thi lai");
-        }else{
-            System.out.println("Ban co thi lai");
-        }
-        
-        if(this.vipham == true){
-            System.out.println("Ban khong co vi pham");
-        }else{
-            System.out.println("Ban tung vi pham");
-        }
-        
-        System.out.println("============Ket qua ne!!!===========");
-        if (this.Khoahoc == false) {
-            System.out.println("Ban khong nhan dc hoc bong");
-        } else if (this.lanthi == false) {
-            System.out.println("Ban khong nhan dc hoc bong");
-        } else if (this.vipham == false) {
-            System.out.println("Ban khong nhan dc hoc bong");
-        } else {
-            System.out.println("Ban dat hoc bong");
+            System.out.println("khogn set");
         }
     }
 }
