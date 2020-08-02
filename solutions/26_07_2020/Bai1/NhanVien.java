@@ -1,126 +1,120 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Nhan.vien;
+package bai1;
 
 import java.util.Scanner;
 
 /**
  *
- * @author Administrator
+ * @author Trieu
  */
 public class NhanVien {
 
-   private String name;
-    private int age, hour;
-    private String address;
-    private double tien;
+    private String ten;
+    private int tuoi;
+    private String diaChi;
+    private double tienLuong;
+    private int gioLam;
+    private double tienThuong;
+    Scanner input = new Scanner(System.in);
+// Constructor khong tham so
 
-    NhanVien() {
-      
+    public NhanVien() {
+
     }
 
-    NhanVien(String name, int age, int hour, String address) {
+    //Constructor co day du tham so
+    public NhanVien(String ten, int tuoi, String diaChi, double tienLuong, int gioLam) {
+        this.ten = ten;
+        this.tuoi = tuoi;
+        this.diaChi = diaChi;
+        this.tienLuong = tienLuong;
+        this.gioLam = gioLam;
+    }
+
+    //ham set, get
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+
+    public int getTuoi() {
+        return tuoi;
+    }
+
+    public void setTuoi(int tuoi) {
+        this.tuoi = tuoi;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public double getTienLuong() {
+        return tienLuong;
+    }
+
+    public void setTienLuong(double tienLuong) {
+        this.tienLuong = tienLuong;
+    }
+
+    public float getGioLam() {
+        return gioLam;
+    }
+
+    public void setGioLam(int gioLam) {
+        this.gioLam = gioLam;
+    }
+
+    //
+    void inputInfor() {
+        System.out.println("Vui long nhap :");
+        System.out.println("Ten nhan vien :");
+        ten = input.nextLine();
+        System.out.println("Tuoi :");
+        tuoi = input.nextInt();
+        input.nextLine();
+        System.out.println("Dia chi :");
+        diaChi = input.nextLine();
+        System.out.println("Tien luong");
+        tienLuong = input.nextDouble();
+        System.out.println("So gio lam :");
+        gioLam = input.nextInt();
+
+    }
+
+   double tinhThuong() {
+        double thuong;
+        if (gioLam >= 200) {
+            return this.tienLuong*0.2;
+        } else if (gioLam >= 100&&gioLam<200) {
+            return this.tienLuong * 0.1;
+        } else {
+            return thuong = 0;
+        }
        
-
-        this.age = age;
-        this.hour = hour;
-        this.address = address;
-        this.name = name;
     }
 
-    void inputInfo() {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.print("nhap ten:");
-        name=sc.nextLine();
-        System.out.print("nhap tuoi:");
-        age=sc.nextInt();
-        sc.nextLine();
-        System.out.print("nhap dia chi:");
-        address = sc.nextLine();
-              System.out.print("nhap so gio lam:");
-        hour = sc.nextInt();
-    while(hour<0)
-    {
-              System.out.print("nhap so gio lam:");
-        hour = sc.nextInt();
+    void printfInfor() {
+        System.out.println("-----Thong tin nhan vien-----");
+        System.out.println("\n>Tên nhan vien: " + this.ten);
+        System.out.println("\n>Tuoi :" + this.tuoi);
+        System.out.println("\n>Dia chi :" + this.diaChi);
+        System.out.println("\n>Tien luong :" + this.tienLuong);
+        System.out.println("\n>Tong gio lam :" + this.gioLam);
+        System.out.println(">Tien thuong :"+tinhThuong());
+        System.out.println("\n>Tong tien Luong :" +( tinhThuong()+this.tienLuong));
     }
-
-        
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public double getTien() {
-        return tien;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setTien(double tien) {
-        this.tien = tien;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    void printInfo() {
-        System.out.println("Ten nhan vien : " + name);
-        System.out.println("Tuoi Nhan vien : " + age);
-        System.out.println("Dia Chi : " + address);
-        System.out.println("Gio lam : " + hour);        
-      
-         
-       
-
-        System.out.println("luong : " + tien); 
-        
-  
-    }
-
-    double tinhluong() {
-        if (hour < 0) {
-            tien = 0;
-        }
-        if (hour < 100) {
-            tien = 20000 * hour;
-        }
-        if (hour < 200) {
-            tien = 20000 * hour * 1.1;
-        }
-        if (hour >= 200) {
-            tien = (20000 * hour * 1.2);
-        }
-        return tien;
-
-    }
-
+     public static void main(String[] args) {
+        NhanVien nhanVien=new NhanVien();
+        nhanVien.inputInfor();
+        nhanVien.printfInfor();
 }
+    
+}
+
