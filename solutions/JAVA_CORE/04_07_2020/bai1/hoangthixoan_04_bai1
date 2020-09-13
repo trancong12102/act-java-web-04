@@ -1,0 +1,59 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package exercise.demo.java04;
+
+import java.io.PrintStream;
+import java.util.Scanner;
+
+/**
+ *
+ * @author iTplusHN
+ */
+public class ExerciseDemoJava04 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap a >>");
+        int a = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhap b >>");
+        int b = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhap c >>");
+        int c = Integer.parseInt(sc.nextLine());
+        if (a == 0) {
+            if (b == 0) {
+                System.out.println("Phuong trinh vo nghiem");
+            } else {
+                float x = -c / a;
+                System.out.println("Phuong trinh co 1 nghiem" + x);
+            }
+        } else {
+            float delta = b*b - 4*a*c;
+            if(delta < 0){
+                System.out.println("Phuong trinh vo nghiem!");}
+            else{
+                    if(delta >0 ){
+                        
+                   double x1 = (-b + Math.sqrt(delta))/2*a;
+                   double x2 = (-b - Math.sqrt(delta))/2*a;
+                   System.out.printf("Phuong trinh co 2 nghiem phan biet: "  + "x1 =" + x1+ "x2" + x2);
+                   
+                   } else{
+                        double X = -b/(2*a);
+                        System.out.println("Phuong trinh co nghiem kep ! " + X);
+                }
+                    
+                    
+                
+        }
+    }
+
+}
+
+}

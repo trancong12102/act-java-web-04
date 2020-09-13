@@ -1,0 +1,94 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Baitapnop240720 {
+    public static int doixung(int n, int[][] a){
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (a[i][j] != a[j][i]) {
+                    return 0;
+                }
+            }
+        }
+        return 1;
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n;
+        System.out.println("Nhap vao so hang, cot: ");
+        n = input.nextInt();
+        int[][] a = new int[n][n];
+        //Bai toan tinh tong, tich hai ma tran
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("A[%d][%d]= ", i, j);
+                a[i][j] = input.nextInt();
+            }
+        }
+        System.out.println("Ma tran A");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("%d ", a[i][j]);
+            }
+            System.out.println(" ");
+        }
+        //Kiem tra ma tran don vi
+        int dem = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == j) {
+                    if (a[i][j] == 1) {
+                        dem++;
+                    } else {
+                        dem--;
+                    }
+                }
+                if (a[i][j] == 0) {
+                    dem++;
+                } else {
+                    dem--;
+                }
+            }
+        }
+        if (dem > 0) {
+            System.out.println("Ma tran A la ma tran don vi");
+        }
+        if (dem < 0) {
+            System.out.println("Ma tran A khong la ma tran don vi");
+        }
+        dem = 0;
+        //Kiem tra ma tran khong
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (a[i][j] == 0) {
+                    dem++;
+                } else {
+                    dem--;
+                }
+            }
+        }
+        if (dem == n * n) {
+            System.out.println("Ma tran A la ma tran khong");
+        } else {
+            System.out.println("Ma tran A khong la ma tran khong");
+        }
+        
+        
+        if (doixung(n,a)==0) {
+            System.out.println("Ma tran A ko doi xung");
+        } 
+        if (doixung(n,a)==1) {
+            System.out.println("Ma tran A doi xung");
+        }
+    }
+}

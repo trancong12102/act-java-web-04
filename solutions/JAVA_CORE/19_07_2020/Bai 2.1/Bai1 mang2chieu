@@ -1,0 +1,58 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Baitapnop240720 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n;
+        System.out.println("Nhap vao so hang, cot: ");
+        n = input.nextInt();
+        int[][] a = new int[n][n];
+        int[][] b = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf("A[%d][%d]= ", i, j);
+                a[i][j] = input.nextInt();
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.printf(" " + a[i][j]);
+            }
+            System.out.println(" ");
+        }
+
+        //Tong cua cac hang
+        int j;
+        int s = 0;
+        for (int i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                s = s + a[i][j];
+            }
+            System.out.printf("Tong cua hang %d la %d\n", j, s);
+            s = 0;
+        }
+
+        //Tong cua cac cot
+        s = 0;
+        for (int i = 0; i < n; i++) {
+            for (j = 0; j < n; j++) {
+                s = s + a[j][i];
+            }
+            System.out.printf("Tong cua cot %d la %d\n", i, s);
+            s = 0;
+        }
+    }
+}

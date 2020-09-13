@@ -1,0 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class NewClass1 {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n;
+        int max = -200;
+        int min = 200;
+        do {            // Bai 4 Tim Min & Max
+            System.out.println("Nhap so nguyen n ");
+            n = input.nextInt();
+            if (n == 0) {
+                break;
+            }
+            System.out.printf("So ban vua nhap la %d\n", n);
+
+            if (n < min) {
+                min = n;
+            }
+            if (n > max) {
+                max = n;
+            }
+        } while (n != 0);
+        System.out.println("Min la " + min);
+        System.out.println("Max la " + max);
+    }
+}

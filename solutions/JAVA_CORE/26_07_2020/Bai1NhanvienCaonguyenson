@@ -1,0 +1,105 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class Nhanvien {
+
+    String ten;
+    int tuoi;
+    String diachi;
+    double Tienluong;
+    int tonggiolam;
+    double thuong;
+    public Nhanvien(){}
+    public Nhanvien(String ten, int tuoi, String diachi, double Tienluong, int tonggiolam){
+            this.ten=ten;
+            this.tuoi=tuoi;
+            this.diachi=diachi;
+            this.Tienluong=Tienluong;
+            this.tonggiolam=tonggiolam;
+        }
+    public void setten() {
+        this.ten = ten;
+    }
+
+    public void getten() {
+        System.out.println(ten);
+    }
+
+    public void tuoi(int tuoi) {
+        this.tuoi = tuoi;
+    }
+
+    public int tuoi() {
+        return this.tuoi;
+    }
+
+    public void setdiachi() {
+        this.diachi = diachi;
+    }
+
+    public void getdiachi() {
+        System.out.println(diachi);
+    }
+
+    public void setTienluong(int Tienluong) {
+        this.Tienluong = Tienluong;
+    }
+
+    public double getTienluong() {
+        return this.Tienluong;
+    }
+
+    public void settonggiolam(int tonggiolam) {
+        this.tonggiolam = tonggiolam;
+    }
+
+    public int gettonggiolam() {
+        return this.tonggiolam;
+    }
+
+    void inputSinhvieninfo() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Nhap vao ten SV: ");
+        ten = input.nextLine();
+        System.out.println("Nhap tuoi: ");
+        tuoi = Integer.parseInt(input.nextLine());
+        System.out.println("Nhap dia chi: ");
+        diachi = input.nextLine();
+        System.out.println("Nhap tien luong: ");
+        Tienluong = input.nextDouble();
+        System.out.println("Tong so gio lam: ");
+        tonggiolam = input.nextInt();
+    }
+    
+    void inputprintinfo(){
+        System.out.println("Ten: " + ten);
+        System.out.println("Tuoi: " + tuoi);
+        System.out.println("Dia chi: " + diachi);
+        System.out.println("Tien luong: " + Tienluong);
+        System.out.println("Tong so gio lam: " + tonggiolam);
+    }
+    
+    double tinhThuong(){
+        if(tonggiolam >= 200){
+            thuong = Tienluong*20/100;
+            System.out.printf("Tien thuong %d gio lam la: %g\n",tonggiolam,thuong);
+        }else if(tonggiolam>=100 && tonggiolam<200){
+            thuong = Tienluong*10/100;
+            System.out.printf("Tien thuong %d gio lam la: %g\n",tonggiolam,thuong);
+        }else{
+            thuong = 0;
+            System.out.printf("Tien thuong %d gio lam la: %g\n",tonggiolam,thuong);
+        }
+        return thuong;
+    }
+}

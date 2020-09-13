@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+/**
+ *
+ * @author JinSu
+ */
+public class Buoi7_BT5 {
+     public static void main(String[] args){
+        //Nhap hai vecto
+        Scanner sc = new Scanner(System.in);
+        int[] vectoA = new int[3];
+        int[] vectoB = new int[3];
+        System.out.println("Nhap toa do vectoA: ");
+        System.out.println("xA = ");
+        vectoA[0] = sc.nextInt();
+        System.out.println("yA = : ");
+        vectoA[1] = sc.nextInt();
+        System.out.println("zA = : ");
+        vectoA[2] = sc.nextInt();
+        System.out.println("Nhap toa do vecto B : ");
+        System.out.println("xB = : ");
+        vectoB[0] = sc.nextInt();
+        System.out.println("yB = : ");
+        vectoB[1] = sc.nextInt();
+        System.out.println("zB = : ");
+        vectoB[2] = sc.nextInt();
+        //Tong 2 vecto la :
+        int[] vectoC = new int[3];
+        System.out.println("Tinh tong cua 2 vecto :");
+        for(int i=0;i<3;i++)
+        {
+            vectoC[i]=vectoA[i]+vectoB[i];
+        }
+        System.out.printf("vecto C la tong cua 2 vec to la : ( %d, %d, %d)\n",vectoC[0],vectoC[1],vectoC[2]);
+        //tinh tich vo huong cua 2 vecto A va B
+        int tich=0;
+        for(int i=0; i<3 ; i++)
+            tich+= vectoA[i]*vectoB[i];
+        System.out.printf("Tich vo huong cua 2 vecto = %d\n",tich);
+    }
+}

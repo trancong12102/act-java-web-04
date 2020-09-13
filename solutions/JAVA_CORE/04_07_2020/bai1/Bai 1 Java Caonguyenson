@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class NewClass2 {
+
+    public static void main(String[] args) {
+        System.out.println("Bai toan giai PT bac 2");
+        Scanner input = new Scanner(System.in);
+        int a, b, c, delta;
+        float x1, x2;
+        System.out.println("Nhap vao he so a,b,c: ");
+        a = input.nextInt();
+        b = input.nextInt();
+        c = input.nextInt();
+        delta = b * b - 4 * a * c;
+        if (delta < 0) {
+            System.out.println("Phuong trinh vo nghiem");
+        } else if (delta == 0) {
+            x1 = (float) -b / (2 * a);
+            System.out.printf("Nghiem cua phuong trinh la %f", x1);
+        } else {
+            x1 = (float)(-b + Math.sqrt(delta)) / (float)(2 * a);
+            x2 = (float)(-b - Math.sqrt(delta)) / (float)(2 * a);
+            System.out.printf("Phuong trinh co 2 nghiem %.2f va %.2f.",x1,x2);
+        }
+    }
+}

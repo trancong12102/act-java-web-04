@@ -1,0 +1,107 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hellojava;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Admin
+ */
+public class NewClass1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n;
+        float s1 = 0;
+        float s2 = 0;
+        float s3 = 0;
+        float s4 = 0;
+        float s5 = 0;
+        float s6 = 0;
+        float s7 = 0;
+        float s8 = 0;
+        float s9 = 0;
+        float s10 = 0;
+        float s11 = 0;
+        System.out.println("Nhap vao n: ");
+        n = input.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            s1 = s1 + 1 / (float) i;
+        }
+        System.out.printf("Tong nghich dao cua phan tu la %f\n", s1);
+
+        for (int i = 1; i <= n; i++) {
+            s2 = s2 + (float) i;
+        }
+        System.out.printf("Tong cua %d phan tu la %f\n", n, s2);
+
+        for (int i = 1; i <= n; i++) {
+            s3 = s3 + (float) i * i;
+        }
+        System.out.printf("Tong cua %d phan tu binh phuong la %f\n", n, s3);
+
+        for (int i = 1; i <= n; i++) {
+            s4 = s4 + 1 / (float) (2 * i);
+        }
+        System.out.printf("Tong 1/2n cua %d phan tu la %f\n", n, s4);
+
+        for (int i = 0; i < n; i++) {
+            s5 = s5 + 1 / (float) (2 * i + 1);
+        }
+        System.out.printf("Tong 1/(2n+1) cua %d phan tu la %f\n", n, s5);
+
+        for (int i = 1; i <= n; i++) {
+            s6 = s6 + 1 / (float) (i * (i + 1));
+        }
+        System.out.printf("Tong cua 1/n*(n+1) la %f\n", s6);
+
+        for (int i = 0; i < n; i++) {
+            s7 = s7 + (float) (2 * i + 1) / (2 * i + 2);
+        }
+        System.out.printf("Tong cua %d phan tu s=(2i+1)/(2i+2) la %f\n", n, s7);
+
+        for (int i = 1; i <= n; i++) {
+            int gt = 1;
+            for (int j = 1; j <= i; j++) {
+                gt = gt * j;
+            }
+            s8 = s8 + gt;
+        }
+        System.out.println("Tong cac giai thua la: " + s8);
+
+        System.out.println("Tong cua cac so dang x^n");
+        int lt1 = 1;
+        int x1;
+        System.out.println("Nhap vao gia tri x");
+        x1 = input.nextInt();
+        for (int i = 1; i <= n; i++) {
+            lt1 = lt1 * x1;
+            s9 = s9 + lt1;
+        }
+        System.out.println("Tong cac luy thua la: " + s9);
+
+        System.out.println("Tong cua cac so dang x^(2n)");
+        int lt2 = 1;
+        int x2;
+        System.out.println("Nhap vao gia tri x");
+        x2 = input.nextInt();
+        for (int i = 0; i < n; i++) {
+            lt2 = lt2 * x2 * x2;
+            s10 = s10 + lt2;
+        }
+        System.out.println("Tong cua cac so dang x^(2n) la: " + s10);
+
+        System.out.println("Tong cac so dang 1/(1+2+...n)");
+        int nd = 1;
+        float s = 0;
+        for (int i = 1; i <= n; i++) {
+            nd = nd * i;
+            s = s + 1 / (float) nd;
+        }
+        System.out.println("Tong cac nghich dao giai thua la: " + s);
+    }
+}
