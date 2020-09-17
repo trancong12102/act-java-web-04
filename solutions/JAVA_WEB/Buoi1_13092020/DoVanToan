@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    <center>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <font size="24" color="blue">G</font>
+        <font size="24" color="red">o</font>
+        <font size="24" color="orange">o</font>
+        <font size="24" color="blue">g</font>
+        <font size="24" color="green">l</font>
+        <font size="24" color="red">e</font>
+        <br>
+        <br>
+        <table border="1" width="400" height="50">
+            <tr>
+                <td>               
+                    <a href="https://www.google.com/">
+                        <center>Search</center>                      
+                    </a>
+                </td>
+            </tr>
+        </table>     
+    </center>              
+</body>
+</html>
