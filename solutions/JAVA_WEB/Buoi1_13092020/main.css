@@ -1,0 +1,54 @@
+.header {
+    height: 154px;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    margin-left: 1100px;
+    
+}
+
+.header__item-link {
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.title {
+    font-size: 100px
+    
+}
+
+.vb__list {
+    display: flex;
+}
+
+.vb__list-item,
+.vb__list-item-link {
+    list-style: none;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.vb {
+    margin-left: 500px;
+}
+
+.footer {
+    display: flex;
+    margin-top: 220px;
+}
+
+.footer__list {
+    display: flex;
+    list-style: none;
+}
+
+.footer__list-2 {
+    margin-left: 700px;
+}
+
+.footer-item {
+    margin: 0 6px;
+}
+
